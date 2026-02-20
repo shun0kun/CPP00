@@ -1,10 +1,5 @@
 #include "Contact.hpp"
 
-int	Contact::getIndex() const
-{
-	return index_;
-}
-
 const std::string&	Contact::getFirstName() const
 {
 	return first_name_;
@@ -30,14 +25,10 @@ const std::string&	Contact::getDarkestSecret() const
 	return darkest_secret_;
 }
 
-Contact::Contact() : index_(-1)
+Contact::Contact()
 {
 }
 
-void	Contact::setIndex(int index)
-{
-	index_ = index;
-}
 
 void	Contact::setFirstName(const std::string &first_name)
 {

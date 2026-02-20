@@ -1,16 +1,15 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 int	main()
 {
 	std::string	input;
 
-	while (true)
-	{
-		std::cout << "> " << std::flush;
-		if (!std::getline(std::cin, input))
-			break ;
-		std::cout << input << '\n';
-	}
+	// std::cout << "|" << std::left << std::setw(10) << "hello" << "|" << std::endl;
+	std::cout << std::right;
+	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
+	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
+	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
 	return 0;
 }

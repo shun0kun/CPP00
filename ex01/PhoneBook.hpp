@@ -8,12 +8,16 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		void	start();
+		// ~PhoneBook();
+		void	launch();
 
 	private:
 		Contact	contacts[8];
+		int		next_;
+		int		size_;
 		void	addContact();
 		void	searchContact();
+		void	print_columns(int i, int index);
 };
 
 #endif

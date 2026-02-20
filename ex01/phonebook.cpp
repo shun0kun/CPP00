@@ -2,6 +2,6 @@
 
 int	main()
 {
-	PhoneBook().start();
+	PhoneBook().launch();
 	return 0;
 }
