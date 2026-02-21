@@ -18,6 +18,7 @@ class PhoneBook
 		Contact				contacts[CAP];
 		int					addContact();
 		int					searchContact();
+		int					getInput(const std::string& prompt, std::string& input);
 		int					internalIndex(int index);
 		void				print_columns(int index);
 		void				print_contact_info(int index);

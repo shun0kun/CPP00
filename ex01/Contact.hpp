@@ -18,6 +18,7 @@ class Contact
 		void				setNickName(const std::string &nick_name);
 		void				setPhoneNumber(const std::string &phone_number);
 		void				setDarkestSecret(const std::string &darkest_secret);
+		void				cleanup();
 
 	private:
 		std::string			first_name_;

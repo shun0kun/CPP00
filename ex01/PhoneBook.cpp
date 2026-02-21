@@ -20,8 +20,7 @@ int	PhoneBook::launch()
 
 	while (true)
 	{
-		std::cout << "\033[32m" << "PhoneBook> " << "\033[0m" << std::flush;
-		if (!std::getline(std::cin, input))
+		if (getInput("\033[32mPhoneBook> \033[0m", input) < 0)
 			break ;
 		if (input == "ADD")
 			addContact();
@@ -35,6 +34,8 @@ int	PhoneBook::launch()
 			break ;
 	}
 	std::cout << std::endl;
+	for (int i = 0; i < CAP; ++i)
+		contacts[i].cleanup();
 	return 0;
 }
 
@@ -42,33 +43,29 @@ int	PhoneBook::addContact()
 {
 	std::string	input;
 
-	std::cout << "First name: " << std::flush;
-	if (!std::getline(std::cin, input))
+	if (getInput("First name: ", input) < 0)
 		return -1;
 	contacts[next_].setFirstName(input);
 
-	std::cout << "Last name: " << std::flush;
-	if (!std::getline(std::cin, input))
+	if (getInput("Last name: ", input) < 0)
 		return -1;
 	contacts[next_].setLastName(input);
 
-	std::cout << "Nick name: " << std::flush;
-	if (!std::getline(std::cin, input))
+	if (getInput("Nick name: ", input) < 0)
 		return -1;
 	contacts[next_].setNickName(input);
 
-	std::cout << "Phone number: " << std::flush;
-	if (!std::getline(std::cin, input))
+	if (getInput("Phone number: ", input) < 0)
 		return -1;
 	contacts[next_].setPhoneNumber(input);
 
-	std::cout << "Darkest secret: " << std::flush;
-	if (!std::getline(std::cin, input))
+	if (getInput("Darkest secret: ", input) < 0)
 		return -1;
 	contacts[next_].setDarkestSecret(input);
 
 	next_ = (next_ + 1) % CAP;
 	size_ = min(size_ + 1, CAP);
+
 	return 0;
 }
 
@@ -77,6 +74,14 @@ int	PhoneBook::internalIndex(int index)
 	if (size_ == CAP)
 		return (next_ + index - 1) % CAP;
 	return index - 1;
+}
+
+std::string	cutString(const std::string& str, int len)
+{
+	std::string	ret;
+
+	if (s)
+	return (ret);
 }
 
 void	PhoneBook::print_columns(int index)
@@ -116,6 +121,14 @@ int	PhoneBook::searchContact()
 	}
 	else
 		std::cout << "Doen't exist." << std::endl;
+	return 0;
+}
+
+int	PhoneBook::getInput(const std::string& prompt, std::string& input)
+{
+	std::cout << prompt << std::flush;
+	if (!std::getline(std::cin, input))
+		return -1;
 	return 0;
 }
 

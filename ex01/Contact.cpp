@@ -29,7 +29,6 @@ Contact::Contact()
 {
 }
 
-
 void	Contact::setFirstName(const std::string &first_name)
 {
 	first_name_ = first_name;
@@ -53,4 +52,13 @@ void	Contact::setPhoneNumber(const std::string &phone_number)
 void	Contact::setDarkestSecret(const std::string &darkest_secret)
 {
 	darkest_secret_ = darkest_secret;
+}
+
+void	Contact::cleanup()
+{
+	first_name_.clear();
+	last_name_.clear();
+	nick_name_.clear();
+	phone_number_.clear();
+	darkest_secret_.clear();
 }
