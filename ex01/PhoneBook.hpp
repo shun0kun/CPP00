@@ -8,16 +8,20 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		// ~PhoneBook();
-		void	launch();
+		~PhoneBook();
+		int					launch();
 
 	private:
-		Contact	contacts[8];
-		int		next_;
-		int		size_;
-		void	addContact();
-		void	searchContact();
-		void	print_columns(int i, int index);
+		static const int	CAP = 8;
+		int					size_;
+		int					next_;
+		Contact				contacts[CAP];
+		int					addContact();
+		int					searchContact();
+		int					internalIndex(int index);
+		void				print_columns(int index);
+		void				print_contact_info(int index);
+		int					min(int a, int b);
 };
 
 #endif
