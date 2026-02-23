@@ -8,7 +8,6 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		~PhoneBook();
 		int					launch();
 
 	private:
@@ -16,13 +15,18 @@ class PhoneBook
 		int					size_;
 		int					next_;
 		Contact				contacts[CAP];
+		void				cleanup();
 		int					addContact();
-		int					searchContact();
-		int					getInput(const std::string& prompt, std::string& input);
-		int					internalIndex(int index);
-		void				print_columns(int index);
-		void				print_contact_info(int index);
-		int					min(int a, int b);
+		int					searchContact() const;
+		bool				isCommand(const std::string& input, const std::string& cmd) const;
+		bool				isBlank(const std::string& str) const;
+		int					getField(const std::string& prompt, std::string& input) const;
+		int					readLine(const std::string& prompt, std::string& input) const;
+		int					internalIndex(int index) const;
+		std::string			truncateWithDot(const std::string& str, std::size_t len) const;
+		void				print_columns(int index) const;
+		void				print_contact_info(int index) const;
+		int					min(int a, int b) const;
 };
 
 #endif

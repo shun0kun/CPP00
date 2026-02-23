@@ -2,14 +2,13 @@
 #include <string>
 #include <iomanip>
 
+void	put_len(const std::string& str)
+{
+	std::cout << str.length() << std::endl;
+}
+
 int	main()
 {
-	std::string	input;
-
-	// std::cout << "|" << std::left << std::setw(10) << "hello" << "|" << std::endl;
-	std::cout << std::right;
-	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
-	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
-	std::cout << std::setw(10) << "a" << std::setw(10) << "a" << std::endl;
+	put_len("ADD");
 	return 0;
 }

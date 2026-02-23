@@ -25,10 +25,6 @@ const std::string&	Contact::getDarkestSecret() const
 	return darkest_secret_;
 }
 
-Contact::Contact()
-{
-}
-
 void	Contact::setFirstName(const std::string &first_name)
 {
 	first_name_ = first_name;
