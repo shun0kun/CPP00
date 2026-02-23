@@ -7,4 +7,5 @@
 - PhoneBook> a、のときにEOF１回押しても終わらなくて、２回押さないと終了しない。
 - launch()終わったら中身のデータを消去する。
 - std::cin.clear(), std::cin.fail(), std::cin.ignore(),を使いこなせるようにする。
+- 
 
