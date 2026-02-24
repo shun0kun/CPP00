@@ -17,3 +17,8 @@
 - `index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1`: makeWithdrawal()
 - vector, pair, iterator, など、このプログラムで使用されている構文などを使いこなせるようにする。
 - class内のstatic関数は、Account::getNbAccounts()のように、クラス実態を作らなくとも使用できる。
+
+# 騒音
+- Ogata Sou
+- Koki Sugimoto
+- Kouki Ito

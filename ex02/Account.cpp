@@ -99,7 +99,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 int	Account::checkAmount( void ) const
 {
-	// 一応実装しておく。
+	return _amount;
 }
 
 void	Account::displayStatus( void ) const
